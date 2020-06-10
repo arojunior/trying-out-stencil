@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'trying-out-stencil',
+  namespace: 'web-components',
   taskQueue: 'async',
   outputTargets: [
     {
