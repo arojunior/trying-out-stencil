@@ -7,7 +7,9 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface JrButton {
-        "variant": "primary" | "warning";
+        "variant": 'primary' | 'warning';
+    }
+    interface JrTable {
     }
     interface MyComponent {
         /**
@@ -31,6 +33,12 @@ declare global {
         prototype: HTMLJrButtonElement;
         new (): HTMLJrButtonElement;
     };
+    interface HTMLJrTableElement extends Components.JrTable, HTMLStencilElement {
+    }
+    var HTMLJrTableElement: {
+        prototype: HTMLJrTableElement;
+        new (): HTMLJrTableElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -39,12 +47,15 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "jr-button": HTMLJrButtonElement;
+        "jr-table": HTMLJrTableElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface JrButton {
-        "variant"?: "primary" | "warning";
+        "variant"?: 'primary' | 'warning';
+    }
+    interface JrTable {
     }
     interface MyComponent {
         /**
@@ -62,6 +73,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "jr-button": JrButton;
+        "jr-table": JrTable;
         "my-component": MyComponent;
     }
 }
@@ -70,6 +82,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "jr-button": LocalJSX.JrButton & JSXBase.HTMLAttributes<HTMLJrButtonElement>;
+            "jr-table": LocalJSX.JrTable & JSXBase.HTMLAttributes<HTMLJrTableElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

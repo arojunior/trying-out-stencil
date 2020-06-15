@@ -25,5 +25,8 @@
   "devDependencies": {
     "@stencil/core": "^1.12.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ag-grid-community": "^23.2.0"
+  }
 }
