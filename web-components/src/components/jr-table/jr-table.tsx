@@ -13,15 +13,16 @@ export class JrTable implements ComponentInterface {
   agGrid: HTMLElement;
 
   columnDefs = [
-    { headerName: "Make", field: "make" },
-    { headerName: "Model", field: "model" },
-    { headerName: "Price", field: "price" }
+    { headerName: "Brand", field: "make", resizable: true, sortable: true, filter: true },
+    { headerName: "Model", field: "model", resizable: true, sortable: true },
+    { headerName: "Price", field: "price", resizable: true, sortable: true }
   ];
 
   rowData = [
     { make: "Toyota", model: "Celica", price: 35000 },
     { make: "Ford", model: "Mondeo", price: 32000 },
-    { make: "Porsche", model: "Boxter", price: 72000 }
+    { make: "Porsche", model: "Boxter", price: 72000 },
+    { make: "Fiat", model: "Punto", price: 7000 }
   ];
 
   gridOptions = {
@@ -41,7 +42,7 @@ export class JrTable implements ComponentInterface {
     return (
       <div
         id="jrGrid"
-        style={{ height: '200px', width: '600px' }}
+        style={{ height: '250px', width: '600px' }}
         class="ag-theme-alpine"
       ></div>
     );
